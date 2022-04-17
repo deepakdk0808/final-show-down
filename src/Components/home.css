@@ -1,0 +1,40 @@
+.maindiv{
+    width: 70%;
+   margin: auto;
+   text-align: center;
+   margin-top:3%;
+}
+
+button{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.maindiv > div{
+width: 100%;
+margin-bottom: 5%;
+align-items: center;
+}
+th{
+    border: 1px solid teal;
+}
+td{
+    border: 1px solid teal;
+    padding: 10px 10px;
+}
+table{
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+input{
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.name{
+    width: 100%;
+    height: auto;
+   
+}
+

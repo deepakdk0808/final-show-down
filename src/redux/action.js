@@ -1,42 +1,22 @@
-import * as types from "./actionType"
-import axios from "axios"
-const getUsers =(users)=>({
+export const Change_Email = "Change_Email"
+export const Change_Password = "Change_Password"
 
-    type:types.GET_USERS,
-    payload:users,
-})
+export const Change_Loading = "Change_Loading"
 
-const useDeleted = ()=>({
-    type:types.DELETE_USER,
-})
+export const Change_Token = "Change_Token"
 
-const userUpdated = (user)=>({
-    type:types.GET_CLASS,
-    payload:user,
-})
-export const loadUsers=()=>{
-    return function(dispatch){
-        axios.get("http://localhost:8080/user").then((resp)=>{
-            // console.log("resp",resp)
-            dispatch(getUsers(resp.data))
-        }).catch((err)=>{console.log(err)})
-    }
-}
-export const deleteUser=(id)=>{
-    return function(dispatch){
-        axios.delete( "http://localhost:8080/user"`/${id}`).then((resp)=>{
-            dispatch(useDeleted());
-            dispatch(loadUsers())
-        }).catch((err)=>{console.log(err)})
-    }
-}
+export const Change_Sucess= "Change_Sucess"
 
-export const updatecity=(id)=>{
-    return function(dispatch){
-        axios.get("http://localhost:8080/user"`/${id}`).then((resp)=>{
-            dispatch(userUpdated(resp.data))
-            console.log("resp",resp.data.class)
-           // dispatch(loadUsers())
-        }).catch((err)=>{console.log(err)})
-    }
-}
+export const Change_Error = "Change_Error"
+
+
+export const change_email = (payload)=>({type:Change_Email,payload})
+
+export const change_loading = (payload)=>({type:Change_Loading,payload})
+
+export const change_sucess=  (payload)=>({type:Change_Sucess,payload})
+
+export const chnage_error = (payload)=>({type:Change_Error,payload})
+export const change_token = (payload) => ({type:Change_Token,payload})
+export const change_password = (payload)=>({type:Change_Password,payload})
+
